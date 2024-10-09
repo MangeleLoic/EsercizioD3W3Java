@@ -28,7 +28,7 @@ public class Partecipazioni {
 
 
     public Partecipazioni(Persona persona, Evento evento, StatoPartecipazione statoPartecipazione) {
-        this.persona = persona; // Changed from personaId to persona
+        this.persona = persona;
         this.evento = evento;
         this.statoPartecipazione = statoPartecipazione;
     }

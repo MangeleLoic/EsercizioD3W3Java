@@ -1,6 +1,7 @@
 package LoicMangele;
 
 import LoicMangele.Dao.EventsDao;
+import LoicMangele.Dao.PartecipazioneDao;
 import LoicMangele.Dao.PersonDao;
 import LoicMangele.entities.*;
 import jakarta.persistence.EntityManager;
@@ -16,6 +17,7 @@ public class Application {
         EntityManager em = emf.createEntityManager();
         EventsDao ev = new EventsDao(em);
         PersonDao pe = new PersonDao(em);
+        PartecipazioneDao pa = new PartecipazioneDao(em);
 
 
         Location location1 = new Location("Concert Hall", "New York");
@@ -63,12 +65,10 @@ public class Application {
         pe.save(person);
         em.getTransaction().commit();
 
-
-        Partecipazioni partecipazione = new Partecipazioni(person, beatles, StatoPartecipazione.CONFERMATO);
-
+        Partecipazioni partecipazione = new Partecipazioni(person, topOfThePops, StatoPartecipazione.CONFERMATO);
 
         em.getTransaction().begin();
-        em.persist(partecipazione);
+        pa.save(partecipazione);
         em.getTransaction().commit();
 
         em.close();
