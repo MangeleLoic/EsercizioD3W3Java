@@ -11,7 +11,7 @@ public class Persona {
 
     @Id
     @GeneratedValue
-    @Column(name = "persona_id")
+    @Column(name = "persona_id", updatable = false, nullable = false)
     private UUID personId;
 
     @Column(nullable = false)
@@ -29,7 +29,6 @@ public class Persona {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Sesso sesso;
-
 
     @OneToMany(mappedBy = "persona")
     private List<Partecipazioni> partecipazioni;
@@ -103,4 +102,3 @@ public class Persona {
         this.partecipazioni = partecipazioni;
     }
 }
-

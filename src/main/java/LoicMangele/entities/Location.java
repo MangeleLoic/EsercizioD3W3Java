@@ -16,10 +16,12 @@ public class Location {
 
     @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private String città;
 
-    @OneToMany(mappedBy = "persona")
+    @OneToMany(mappedBy = "location")
     private List<Evento> eventi;
+
 
 
     public Location() {}
