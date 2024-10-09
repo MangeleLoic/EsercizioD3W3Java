@@ -50,10 +50,10 @@ public class Application {
 
 
         Persona person = new Persona(
-                "Mario",
-                "Rossi",
-                "mario.rossi@example.com",
-                LocalDate.of(1990, 5, 20),
+                "Luigi",
+                "Rosa",
+                "luigi.rosa@example.com",
+                LocalDate.of(1991, 7, 22),
                 Sesso.MASCHIO
         );
 
